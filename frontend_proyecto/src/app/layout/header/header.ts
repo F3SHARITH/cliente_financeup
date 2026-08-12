@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+interface NavItem {
+  label: string;
+  path: string;
+  exact: boolean;
+}
+
+@Component({
+  selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive],
+  templateUrl: './header.html',
+  styleUrl: './header.css'
+})
+export class HeaderComponent {
+  navItems: NavItem[] = [
+    { label: 'Inicio', path: '/', exact: true },
+    { label: 'Educacion', path: '/educacion', exact: false },
+    { label: 'Alianzas', path: '/alianzas', exact: false },
+    { label: 'Soporte', path: '/soporte', exact: false },
+    { label: 'Perfil', path: '/perfil', exact: false }
+  ];
+}

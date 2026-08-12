@@ -1,0 +1,26 @@
+<footer class="app-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a routerLink="/" class="logo">
+        <svg viewBox="0 0 40 40" class="logo-icon">
+          <path d="M8 32 L8 8 L28 8 L28 14 L14 14 L14 18 L24 18 L24 24 L14 24 L14 32 Z" fill="currentColor"/>
+          <path d="M20 4 L32 4 L32 16" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M32 4 L18 18" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">FinanceUp</span>
+      </a>
+      <p class="tagline">Tu bienestar financiero, en un solo lugar.</p>
+    </div>
+
+    <div class="footer-columns">
+      <div class="footer-col" *ngFor="let col of columns">
+        <h4>{{ col.title }}</h4>
+        <a *ngFor="let link of col.links" [routerLink]="link.path">{{ link.label }}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} FinanceUp. Todos los derechos reservados.</p>
+  </div>
+</footer>
