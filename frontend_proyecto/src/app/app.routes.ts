@@ -26,7 +26,7 @@ export const routes: Routes = [
   },
   {
     path: 'centro-ayuda',
-    loadComponent: () =>
+     loadComponent: () =>
       import('./pages/soporte/centro-ayuda/centro-ayuda').then((m) => m.CentroAyudaConponent),
     title: 'Alianzas - FinanceUp',
   },
