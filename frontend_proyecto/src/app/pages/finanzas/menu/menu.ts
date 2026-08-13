@@ -9,7 +9,7 @@ interface MenuItem {
 }
 
 @Component({
-  selector: 'app-Menu',
+  selector: 'app-menu',
   imports: [RouterModule],
   templateUrl: './menu.html',
   styleUrls: ['./menu.css'],
@@ -17,14 +17,13 @@ interface MenuItem {
 export class MenuComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
-  nombreSistema: string = 'FINANCE UP';
-  usuario: string = '';
+  nombreSistema = 'FINANCE UP';
+  usuario = '';
 
-  /** Menú principal. Ajusta 'nombre' y 'ruta' según las secciones reales de tu proyecto. */
   menu: MenuItem[] = [
-    { icono: '▦', nombre: 'Resumen', ruta: '/dashboard' },
-    { icono: '📈', nombre: 'Inversiones', ruta: '/inversiones' },
-    { icono: '🚩', nombre: 'Metas', ruta: '/metas' },
+    { icono: '[]', nombre: 'Resumen', ruta: '/finanzas' },
+    { icono: '^', nombre: 'Educacion', ruta: '/educacion' },
+    { icono: '*', nombre: 'Alianzas', ruta: '/alianzas' },
   ];
 
   ngOnInit(): void {
@@ -32,7 +31,7 @@ export class MenuComponent implements OnInit {
   }
 
   nuevoMovimiento(): void {
-    // Punto de extensión: abrir el formulario/modal de nuevo movimiento
+    // Punto de extension: abrir el formulario/modal de nuevo movimiento.
   }
 
   get inicialUsuario(): string {
