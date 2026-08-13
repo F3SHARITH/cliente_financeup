@@ -17,10 +17,8 @@ interface NavItem {
 })
 export class HeaderComponent {
   navItems: NavItem[] = [
-    { label: 'Inicio', path: '/', exact: true },
+    { label: 'Inicio', path: '/prueba', exact: true },
     { label: 'Educacion', path: '/educacion', exact: false },
-    { label: 'Alianzas', path: '/alianzas', exact: false },
-    { label: 'Soporte', path: '/soporte', exact: false },
-    { label: 'Perfil', path: '/perfil', exact: false }
+    { label: 'Alianzas', path: '/alianzas', exact: false }
   ];
 }

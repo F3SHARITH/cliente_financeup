@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './alianzas.html',
   styleUrl: './alianzas.css',
 })
-export class Alianzas {}
+export class AlianzasComponent {}

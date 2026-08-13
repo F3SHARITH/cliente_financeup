@@ -19,25 +19,25 @@ export class FooterComponent {
 
   columns: FooterColumn[] = [
     {
-      title: 'Producto',
+      title: 'Explorar',
       links: [
+        { label: 'Inicio', path: '/prueba' },
         { label: 'Educacion', path: '/educacion' },
-        { label: 'Alianzas', path: '/alianzas' },
-        { label: 'Perfil', path: '/perfil' }
+        { label: 'Alianzas', path: '/alianzas' }
       ]
     },
     {
-      title: 'Soporte',
+      title: 'Aprender',
       links: [
-        { label: 'Centro de ayuda', path: '/soporte' },
-        { label: 'Contacto', path: '/contacto' }
+        { label: 'Finanzas personales', path: '/educacion' },
+        { label: 'Recursos', path: '/educacion' }
       ]
     },
     {
-      title: 'Legal',
+      title: 'Empresa',
       links: [
-        { label: 'Términos', path: '/terminos' },
-        { label: 'Privacidad', path: '/privacidad' }
+        { label: 'Aliados', path: '/alianzas' },
+        { label: 'Comunidad', path: '/alianzas' }
       ]
     }
   ];

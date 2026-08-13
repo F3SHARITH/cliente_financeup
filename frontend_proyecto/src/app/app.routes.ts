@@ -13,15 +13,15 @@ export const routes: Routes = [
     title: 'Prueba - FinanceUp',
   },
   {
-    path: 'cursos',
+    path: 'educacion',
     loadComponent: () =>
-      import('./pages/cursos/cursos').then((m) => m.Cursos),
-    title: 'Cursos - FinanceUp',
+      import('./pages/educacion/educacion/educacion').then((m) => m.EducacionComponent),
+    title: 'Educacion - FinanceUp',
   },
   {
     path: 'alianzas',
     loadComponent: () =>
-      import('./pages/alianzas/alianzas').then((m) => m.Alianzas),
+      import('./pages/alianzas/alianzas/alianzas').then((m) => m.AlianzasComponent),
     title: 'Alianzas - FinanceUp',
   },
   {

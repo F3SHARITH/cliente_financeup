@@ -1,14 +1,11 @@
 <header class="app-header">
   <div class="header-container">
-    <a routerLink="/" class="logo">
-      <svg viewBox="0 0 40 40" class="logo-icon">
-        <path d="M8 32 L8 8 L28 8 L28 14 L14 14 L14 18 L24 18 L24 24 L14 24 L14 32 Z" fill="currentColor"/>
-        <path d="M20 4 L32 4 L32 16" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M32 4 L18 18" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
-      </svg>
+    <a routerLink="/prueba" class="brand" aria-label="Ir al inicio de FinanceUp">
+      <span class="brand-mark">F</span>
+      <span class="brand-text">FinanceUp</span>
     </a>
 
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Navegacion principal">
       <a
         *ngFor="let item of navItems"
         [routerLink]="item.path"
@@ -20,4 +17,4 @@
       </a>
     </nav>
   </div>
-</header> 
+</header>
