@@ -8,8 +8,7 @@ export class AuthService {
     return localStorage.getItem('nombre') ?? '';
   }
 
-  cerraSesion(): void {
-    // Método usado por el componente header (nombre con typo intencional "cerraSesion")
+  cerrarSesion(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('rol');
     localStorage.removeItem('nombre');
