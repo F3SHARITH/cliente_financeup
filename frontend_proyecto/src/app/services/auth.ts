@@ -57,6 +57,13 @@ export class AuthService {
   }
 
   /**
+   * Devuelve el nombre del usuario autenticado.
+   */
+  obtenerNombre(): string {
+    return this.usuarioActual?.nombre || 'Invitado';
+  }
+
+  /**
    * Indica si hay una sesión activa.
    */
   estaAutenticado(): boolean {
