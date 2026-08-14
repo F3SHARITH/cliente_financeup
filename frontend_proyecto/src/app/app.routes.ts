@@ -1,44 +1,73 @@
 import { Routes } from '@angular/router';
-import { CentroAyudaConponent } from './pages/soporte/centro-ayuda/centro-ayuda';
-import { LineaAyudaComponent } from './pages/soporte/linea-ayuda/linea-ayuda';
-import { HablaConNosotrosComponent } from './pages/soporte/habla-con-nosotros/habla-con-nosotros';
-
+import { LayoutComponent } from './layout/layout/layout';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'prueba',
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'prueba',
+        pathMatch: 'full',
+      },
+      {
+        path: 'prueba',
+        loadComponent: () =>
+          import('./pages/prueba/prueba').then((m) => m.Prueba),
+        title: 'Prueba - FinanceUp',
+      },
+      {
+        path: 'educacion',
+        loadComponent: () =>
+          import('./pages/educacion/educacion/educacion').then((m) => m.EducacionComponent),
+        title: 'Educacion - FinanceUp',
+      },
+      {
+        path: 'alianzas',
+        loadComponent: () =>
+          import('./pages/alianzas/alianzas/alianzas').then((m) => m.AlianzasComponent),
+        title: 'Alianzas - FinanceUp',
+      },
+      {
+        path: 'centro-ayuda',
+        loadComponent: () =>
+          import('./pages/soporte/centro-ayuda/centro-ayuda').then((m) => m.CentroAyudaConponent),
+        title: 'Centro de ayuda - FinanceUp',
+      },
+      {
+        path: 'linea-ayuda',
+        loadComponent: () =>
+          import('./pages/soporte/linea-ayuda/linea-ayuda').then((m) => m.LineaAyudaComponent),
+        title: 'Linea de ayuda - FinanceUp',
+      },
+      {
+        path: 'finanzas',
+        loadComponent: () =>
+          import('./pages/finanzas/finanzas/finanzas').then((m) => m.FinanzasComponent),
+        title: 'Finanzas - FinanceUp',
+      },
+      {
+        path: 'menu',
+        loadComponent: () =>
+          import('./pages/finanzas/menu/menu').then((m) => m.MenuComponent),
+        title: 'Menu - FinanceUp',
+      },
+      {
+        path: '**',
+        redirectTo: 'prueba',
+      },
+    ],
+  },
+  {
+    path: 'Finanzas',
+    redirectTo: 'finanzas',
     pathMatch: 'full',
   },
   {
-    path: 'prueba',
-    loadComponent: () =>
-      import('./pages/prueba/prueba').then((m) => m.Prueba),
-    title: 'Prueba - FinanceUp',
-  },
-  {
-    path: 'educacion',
-    loadComponent: () =>
-      import('./pages/educacion/educacion/educacion').then((m) => m.EducacionComponent),
-    title: 'Educacion - FinanceUp',
-  },
-  {
-    path: 'alianzas',
-    loadComponent: () =>
-      import('./pages/alianzas/alianzas/alianzas').then((m) => m.AlianzasComponent),
-    title: 'Alianzas - FinanceUp',
-  },
-  {
-    path: 'linea',
-    component:LineaAyudaComponent
-  },
-  {
-    path: 'hablar',
-    component:HablaConNosotrosComponent
-  },
-  {
-    path: '**',
-    redirectTo: 'prueba',
+    path: 'Menu',
+    redirectTo: 'menu',
+    pathMatch: 'full',
   },
   
 ];
