@@ -58,7 +58,13 @@ export class LineaAyudaComponent {
   ];
 
   toggleFaq(item: FaqItem): void {
-    item.expanded = !item.expanded;
+    const wasExpanded = item.expanded;
+
+    // Cierra la pregunta que estuviera abierta
+    this.faqItems.forEach((faq) => (faq.expanded = false));
+
+    // Si la seleccionada no estaba abierta, la abre
+    item.expanded = !wasExpanded;
   }
 
   onChatClick(): void {
