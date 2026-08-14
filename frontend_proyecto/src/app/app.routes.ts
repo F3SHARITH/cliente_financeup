@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { CentroAyudaConponent } from './pages/soporte/centro-ayuda/centro-ayuda';
 import { LineaAyudaComponent } from './pages/soporte/linea-ayuda/linea-ayuda';
+import { HablaConNosotrosComponent } from './pages/soporte/habla-con-nosotros/habla-con-nosotros';
+
 
 export const routes: Routes = [
   {
@@ -29,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'linea',
     component:LineaAyudaComponent
+  },
+  {
+    path: 'hablar',
+    component:HablaConNosotrosComponent
   },
   {
     path: '**',
