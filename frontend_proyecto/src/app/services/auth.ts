@@ -4,6 +4,7 @@ export interface Usuario {
   email: string;
   password: string;
   nombre: string;
+  apellido?: string;
   rol: string;
 }
 
@@ -23,6 +24,10 @@ const STORAGE_KEY = 'financeup_user';
 export class AuthService {
   private usuarioActual: Usuario | null = null;
 
+  // Lista en memoria: incluye los mock originales + los que se registren en esta sesión.
+  // TODO: al conectar el backend real, este arreglo desaparece; registrarUsuario() pasa a ser un POST /api/auth/register.
+  private usuarios: Usuario[] = [...USUARIOS_MOCK];
+
   constructor() {
     // Recupera la sesión si ya había un usuario logueado (persistencia entre recargas)
     const guardado = sessionStorage.getItem(STORAGE_KEY);
@@ -36,7 +41,7 @@ export class AuthService {
    * Devuelve true si el login fue exitoso, false si las credenciales son incorrectas.
    */
   iniciarSesion(email: string, password: string): boolean {
-    const usuario = USUARIOS_MOCK.find(
+    const usuario = this.usuarios.find(
       (u) => u.email.toLowerCase() === email.toLowerCase() && u.password === password
     );
 
@@ -47,6 +52,32 @@ export class AuthService {
     this.usuarioActual = usuario;
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(usuario));
     return true;
+  }
+
+  /**
+   * Registra un nuevo usuario (mock, en memoria) y lo deja autenticado.
+   * Devuelve { exito: true } si se creó, o { exito: false, mensaje } si el correo ya existe.
+   */
+  registrarUsuario(nombre: string, apellido: string, email: string, password: string): { exito: boolean; mensaje?: string } {
+    const yaExiste = this.usuarios.some((u) => u.email.toLowerCase() === email.toLowerCase());
+
+    if (yaExiste) {
+      return { exito: false, mensaje: 'Ya existe una cuenta registrada con ese correo.' };
+    }
+
+    const nuevoUsuario: Usuario = {
+      email,
+      password,
+      nombre,
+      apellido,
+      rol: 'user'
+    };
+
+    this.usuarios.push(nuevoUsuario);
+    this.usuarioActual = nuevoUsuario;
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(nuevoUsuario));
+
+    return { exito: true };
   }
 
   /**
