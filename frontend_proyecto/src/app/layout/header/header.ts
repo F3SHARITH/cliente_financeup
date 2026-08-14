@@ -19,8 +19,9 @@ export class HeaderComponent {
   navItems: NavItem[] = [
     { label: 'Inicio', path: '/prueba', exact: true },
     { label: 'Educacion', path: '/educacion', exact: false },
+    { label: 'Alianzas', path: '/alianzas', exact: false },
     { label: 'Finanzas', path: '/finanzas', exact: false },
-    { label: 'Menu', path: '/menu', exact: false },
-    { label: 'Alianzas', path: '/alianzas', exact: false }
+    { label: 'Soporte', path: '/centro-ayuda', exact: false },
+    { label: 'Perfil', path: '/prueba', exact: false },
   ];
 }
