@@ -27,7 +27,12 @@ export const routes: Routes = [
     title: 'Alianzas - FinanceUp',
   },
   {
+    path: 'linea',
+    component:LineaAyudaComponent
+  },
+  {
     path: '**',
     redirectTo: 'prueba',
   },
+  
 ];
