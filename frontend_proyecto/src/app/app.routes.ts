@@ -1,20 +1,30 @@
 import { Routes } from '@angular/router';
 import { FinanzasComponent } from './pages/finanzas/finanzas/finanzas';
-import { menuComponent } from './pages/finanzas/menu/menu';
+import { InversionesComponent } from './pages/finanzas/inversiones/inversiones';
+import { MetasComponent } from './pages/finanzas/metas/metas';
 
 export const routes: Routes = [
     {
     path: '',
-    redirectTo: 'menu', 
+    redirectTo: 'finanzas', 
     pathMatch: 'full'
     },
     {
     path: 'finanzas',
     component: FinanzasComponent, 
     },
-        {
+    {
     path: 'menu',
-    component: menuComponent, 
+    component: FinanzasComponent, 
+    },
+    {
+    path: 'inversiones',
+    component: InversionesComponent, 
+    },
+    {
+    path: 'metas',
+    component: MetasComponent, 
     }
+
 ];
 

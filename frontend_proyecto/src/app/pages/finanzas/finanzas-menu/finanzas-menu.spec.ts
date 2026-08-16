@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { menuComponent } from './menu';
+import { FinanzasMenuComponent } from './finanzas-menu';
 
-describe('Menu', () => {
-  let component: menuComponent;
-  let fixture: ComponentFixture<menuComponent>;
+describe('FinanzasMenu', () => {
+  let component: FinanzasMenuComponent;
+  let fixture: ComponentFixture<FinanzasMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [menuComponent],
+      imports: [FinanzasMenuComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(menuComponent);
+    fixture = TestBed.createComponent(FinanzasMenuComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -19,5 +19,4 @@ describe('Menu', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });
