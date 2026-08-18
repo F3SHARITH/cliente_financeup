@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { FinanzasMenuComponent } from '../finanzas-menu/finanzas-menu';
 
 interface Meta {
@@ -13,11 +14,21 @@ interface Meta {
 
 @Component({
   selector: 'app-metas',
-  imports: [FinanzasMenuComponent],
+  imports: [FormsModule, FinanzasMenuComponent],
   templateUrl: './metas.html',
   styleUrl: './metas.css',
 })
 export class MetasComponent {
+
+  mostrarFormularioMeta = signal(false);
+  private siguienteIdMeta = 100;
+ 
+  nombreNuevaMeta: string = '';
+  objetivoNuevaMeta: number | null = null;
+ 
+  toggleFormularioMeta(): void {
+    this.mostrarFormularioMeta.update(v => !v);
+  }
   /** Estadística mostrada tal como en la referencia (no se deriva del arreglo) */
   metasAlcanzadas = 3;
   totalMetas = 4;
@@ -81,9 +92,29 @@ export class MetasComponent {
     return `$${valor.toLocaleString('es-CO')}`;
   }
 
-  crearMeta(): void {
-    // Punto de extensión: abrir el formulario/modal de nueva meta
+guardarNuevaMeta(): void {
+    const nombre = this.nombreNuevaMeta.trim();
+    const objetivo = this.objetivoNuevaMeta;
+ 
+    if (!nombre || objetivo === null || objetivo <= 0) {
+      return;
+    }
+ 
+    this.metas.push({
+      id: this.siguienteIdMeta++,
+      nombre,
+      actual: 0,
+      objetivo,
+      cumplida: false,
+      notaPrincipal: 'Meta recién creada',
+      notaSecundaria: 'Define tu aporte mensual',
+    });
+ 
+    this.nombreNuevaMeta = '';
+    this.objetivoNuevaMeta = null;
+    this.mostrarFormularioMeta.set(false);
   }
+ 
 
   masOpciones(): void {
     // Punto de extensión: menú de opciones (editar, eliminar, ordenar, etc.)
