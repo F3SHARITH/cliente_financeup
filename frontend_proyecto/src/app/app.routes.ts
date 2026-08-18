@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout/layout';
 
+
 export const routes: Routes = [
   {
     path: '',
@@ -41,22 +42,7 @@ export const routes: Routes = [
           import('./pages/soporte/linea-ayuda/linea-ayuda').then((m) => m.LineaAyudaComponent),
         title: 'Linea de ayuda - FinanceUp',
       },
-      {
-        path: 'finanzas',
-        loadComponent: () =>
-          import('./pages/finanzas/finanzas/finanzas').then((m) => m.FinanzasComponent),
-        title: 'Finanzas - FinanceUp',
-      },
-      {
-        path: 'menu',
-        loadComponent: () =>
-          import('./pages/finanzas/menu/menu').then((m) => m.MenuComponent),
-        title: 'Menu - FinanceUp',
-      },
-      {
-        path: '**',
-        redirectTo: 'prueba',
-      },
+      
     ],
   },
   {
