@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth';
+import { FinanzasMenuComponent } from '../finanzas-menu/finanzas-menu';
 
 interface TarjetaResumen {
   icono: string;
@@ -37,8 +38,11 @@ interface Meta {
 
 @Component({
   selector: 'app-finanzas',
+  imports: [FinanzasMenuComponent],
   templateUrl: './finanzas.html',
-  styleUrls: ['./finanzas.css'],
+  styleUrls: ['./finanzas.css']
+  
+  
 })
 export class FinanzasComponent implements OnInit {
   constructor(public authService: AuthService) {}
