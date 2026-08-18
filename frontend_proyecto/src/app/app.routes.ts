@@ -42,6 +42,12 @@ export const routes: Routes = [
         title: 'Linea de ayuda - FinanceUp',
       },
       {
+        path: 'pqr',
+        loadComponent: () =>
+          import('./pages/soporte/pqr/pqr').then((m) => m.PqrComponent),
+        title: 'Linea de ayuda - FinanceUp',
+      },
+      {
         path: 'finanzas',
         loadComponent: () =>
           import('./pages/finanzas/finanzas/finanzas').then((m) => m.FinanzasComponent),
