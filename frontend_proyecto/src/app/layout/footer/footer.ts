@@ -23,7 +23,10 @@ export class FooterComponent {
       links: [
         { label: 'Inicio', path: '/prueba' },
         { label: 'Educacion', path: '/educacion' },
-        { label: 'Alianzas', path: '/alianzas' }
+        { label: 'Alianzas', path: '/alianzas' },
+        { label: 'Centro de ayuda', path: '/centro-ayuda' },
+        { label: 'Linea de ayuda', path: '/linea-ayuda' },
+        { label: 'Finanzas', path: '/finanzas' },
       ]
     },
     {
