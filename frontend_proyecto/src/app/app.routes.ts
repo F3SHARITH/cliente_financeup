@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { FinanzasComponent } from './pages/finanzas/finanzas/finanzas';
 import { InversionesComponent } from './pages/finanzas/inversiones/inversiones';
-import { MetasComponent } from './pages/finanzas/finanzas-menu/metas/metas';
+import { MetasComponent } from './pages/finanzas/metas/metas';
 
 export const routes: Routes = [
     {
