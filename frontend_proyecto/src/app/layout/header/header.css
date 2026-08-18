@@ -1,7 +1,11 @@
 .app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #e6e8e5;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7f3 100%);
+  border-bottom: 0.5px solid rgba(72, 111, 88, 0.18);
+  box-shadow: 0 1px 0 rgba(40, 70, 55, 0.04);
 }
 
 .header-container {
@@ -17,29 +21,31 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  color: #1d2a22;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-right: auto;
+  color: #1f3a2d;
   text-decoration: none;
 }
 
 .brand-mark {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #cfd8d2;
-  border-radius: 8px;
-  background: #f7faf8;
-  color: #2f8f52;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1;
+  width: 88px;
+  height: 52px;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background-image: url('../../pages/educacion/images/v130_2102.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 6px 16px rgba(62, 97, 74, 0.12);
 }
 
 .brand-text {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   letter-spacing: 0;
+  color: #234a39;
 }
 
 .main-nav {
@@ -47,27 +53,28 @@
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .nav-link {
-  border-radius: 6px;
-  padding: 0.45rem 0.75rem;
-  color: #4a554d;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  color: #3f5f4d;
   font-size: 0.94rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.18s ease, color 0.18s ease;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
 .nav-link:hover {
-  background-color: #f1f4f2;
-  color: #223126;
+  background-color: #e8f0ea;
+  color: #204833;
 }
 
 .nav-link.active {
-  background-color: #e4f3e9;
-  color: #22683c;
+  background-color: #dfeee3;
+  color: #234d3c;
+  box-shadow: inset 0 0 0 1px rgba(58, 97, 72, 0.12);
 }
 
 @media (max-width: 768px) {
@@ -75,6 +82,15 @@
     padding: 0.9rem 1rem;
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .brand {
+    margin-right: 0;
+  }
+
+  .brand-mark {
+    width: 56px;
+    height: 34px;
   }
 
   .main-nav {
