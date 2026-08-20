@@ -12,7 +12,7 @@ interface MenuItem {
   selector: 'app-menu',
   imports: [RouterModule],
   templateUrl: './menu.html',
-  styleUrls: ['./menu.css'],
+  styleUrls: [],
 })
 export class MenuComponent implements OnInit {
   constructor(private authService: AuthService) {}
